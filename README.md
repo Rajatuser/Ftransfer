@@ -382,7 +382,7 @@ views.py
                             '''
                             all_posts = Post.objects.all().order_by('-id')
                             param = {'posts':all_posts}
-                            return render(request, 'main/home.html', param)
+                            return render(request, 'home.html', param)
 
                         def post(self, request):
                             '''
@@ -409,7 +409,7 @@ views.py
                     # Create Upload File System
                     class UploadView(ListView):
                         def get(self, request, user_name):
-                            return render(request, 'main/upload_file.html')
+                            return render(request, 'upload_file.html')
 
 
                         def post(self, request, user_name):
@@ -421,7 +421,7 @@ views.py
                             upload_post = Post(user=user_obj, title=title, file_field=filename, desc=desc)
                             upload_post.save()
                             messages.success(request, 'Your Post has been uploaded successfully.')
-                            return render(request, 'main/upload_file.html')
+                            return render(request, 'upload_file.html')
 
 
 
@@ -431,7 +431,7 @@ views.py
                             user_obj = User.objects.get(username=user_name)
                             user_posts = user_obj.post_set.all().order_by('-id')
                             param = {'user_data':user_obj, 'user_posts': user_posts}
-                            return render(request, 'main/profile.html', param)
+                            return render(request, 'profile.html', param)
 
 
                     # Post Delete View
@@ -455,7 +455,7 @@ views.py
                             search_desc = Post.objects.filter(desc__icontains = query)
                             search_result = search_title.union(search_desc)
                             param = {'query':query, 'search_result':search_result, 'search_users':search_users}
-                            return render(request, 'main/search.html', param)
+                            return render(request, 'search.html', param)
 
 
 
