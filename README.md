@@ -171,8 +171,8 @@ home.html
                         <p class="card-text">{{post.desc}}</p>
 
                         {% if request.session.user %}
-                            <a href="{{MEDIA_URL}}/{{post.file_field.url}}" class="btn btn-warning" target="_blank">View</a>
-                            <a href="{{MEDIA_URL}}/{{post.file_field.url}}" class="btn btn-info mx-4" download>Download</a>  
+                            <a href="{{post.file_field.url}}" class="btn btn-warning" target="_blank">View</a>
+                            <a href="{{post.file_field.url}}" class="btn btn-info mx-4" download>Download</a>  
                         {% else %}
                             <a href="#">You Have To Login Before Download this File.</a>
                         {% endif %}
