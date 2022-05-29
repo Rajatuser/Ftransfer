@@ -156,7 +156,7 @@ Base.html
             </body>
 </html>
 
-home.html
+ **home.html**
 
                 {% extends 'main/base.html' %}
             {% block title %}Home Page{% endblock %}
